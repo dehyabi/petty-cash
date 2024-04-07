@@ -36,10 +36,10 @@
     >
     <i class="fasx fas fa-th-large"></i><span> Dashboard</span>
     </a>
-    <a href="#" class="list-group-item list-group-item-action py-3">
+    <a href="{{ route('menu.transaksi') }}" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-shopping-cart"></i><span> Transaksi</span>
     </a>
-    <a href="#" class="list-group-item list-group-item-action py-3">
+    <a href="{{ route('menu.laporan') }}" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-chart-bar"></i><span> Laporan</span>
     </a>
     <a href="{{ route('menu.petty.cash') }}" class="list-group-item list-group-item-action py-3">
