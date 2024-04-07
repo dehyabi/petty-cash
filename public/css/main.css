@@ -1,44 +1,45 @@
 .sidebar-wrapper {
-    width: 220px;
-    background-color: grey;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    z-index: 1;
+  width: 220px;
+  background-color: grey;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  z-index: 1;
 }
 
 .list-group-item {
-    background-color: grey !important;
-    color: white !important;
+  background-color: grey !important;
+  color: white !important;
 }
 
 .list-group-item:hover {
-    background-color: rgb(115, 115, 115) !important;
-    width: 220px !important;
+  background-color: rgb(115, 115, 115) !important;
+  width: 220px !important;
 }
 
 .left-side {
-    max-width: 220px !important;
+  max-width: 220px !important;
 }
 
 .right-side {
-    min-width: 500px !important;
+  min-width: 500px !important;
 }
 
 .active {
-    background-color: rgb(100, 100, 100) !important;
-    width: 220px !important;
-    border: none !important;
+  background-color: rgb(100, 100, 100) !important;
+  width: 220px !important;
+  border: none !important;
 }
 
 .fasx {
-    margin-left: 15px !important;
+  margin-left: 15px !important;
 }
 
 .btn-outline-dark:hover {
-    background-color: rgb(180, 180, 180) !important;
+  background-color: rgb(222, 222, 222) !important;
+  color: rgb(74, 74, 74) !important;
 }
 
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
