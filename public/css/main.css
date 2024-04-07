@@ -43,3 +43,8 @@
 a {
   text-decoration: none !important;
 }
+
+
+body {
+    background-color: rgb(235, 235, 235) !important;
+}
