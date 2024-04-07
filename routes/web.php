@@ -2,10 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\GroupUserController;
+use App\Http\Controllers\PettyCashController;
+use App\Http\Controllers\MenuLokasiController;
+use App\Http\Controllers\MenuUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +36,33 @@ Route::put('/update-employee/{id}',[EmployeeController::class,'updateEmployee'])
 Route::get('/confirm-delete-employee/{id}',[EmployeeController::class,'confirmDeleteEmployee'])->name('confirm.delete.employee');
 Route::get('/delete-employee/{id}',[EmployeeController::class,'deleteEmployee'])->name('delete.employee'); 
 
-// lokasi outlet
-Route::get('/add-lokasi',[LokasiController::class,'addLokasi'])->name('add.lokasi');
+// petty cash 
+Route::get('/add-petty-cash',[PettyCashController::class,'addPettyCash'])->name('add.petty.cash');
+
+// menu user
+Route::get('/menu-user',[MenuUserController::class,'menuUser'])->name('menu.user');
+
+// user
+Route::get('/add-user',[userController::class,'addUser'])->name('add.user');
+Route::post('/store-user',[userController::class,'storeUser'])->name('store.user');
+Route::get('/all-user',[userController::class,'allUser'])->name('all.user');
+Route::get('/edit-user/{id}',[userController::class,'editUser'])->name('edit.user');
+Route::put('/update-user/{id}',[userController::class,'updateUser'])->name('update.user');
+Route::get('/confirm-delete-user/{id}',[userController::class,'confirmDeleteUser'])->name('confirm.delete.user');
+Route::get('/delete-user/{id}',[userController::class,'deleteUser'])->name('delete.user');
+
+// group user
+Route::get('/add-group-user',[GroupUserController::class,'addGroupUser'])->name('add.group.user');
+Route::post('/store-group-user',[GroupUserController::class,'storeGroupUser'])->name('store.group.user');
+Route::get('/all-group-user',[GroupUserController::class,'allGroupUser'])->name('all.group.user');
+Route::get('/edit-group-user/{id}',[GroupUserController::class,'editGroupUser'])->name('edit.group.user');
+Route::put('/update-group-user/{id}',[GroupUserController::class,'updateGroupUser'])->name('update.group.user');
+Route::get('/confirm-delete-group-user/{id}',[GroupUserController::class,'confirmDeleteGroupUser'])->name('confirm.delete.group.user');
+Route::get('/delete-group-user/{id}',[GroupUserController::class,'deleteGroupUser'])->name('delete.group.user');
+
+
+// menu lokasi
+Route::get('/menu-lokasi',[MenuLokasiController::class,'menuLokasi'])->name('menu.lokasi');
 
 // city
 Route::get('/add-city',[CityController::class,'addCity'])->name('add.city');
