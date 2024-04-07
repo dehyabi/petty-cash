@@ -3,15 +3,14 @@
 @section('content') 
 
 <div class="card-header">
-        <i class="fas fa-table mr-1"></i>
-        Master Data > Tambah Akun Petty Cash
+        Petty Cash > Tambah Akun Petty Cash
 </div>
 
 <main> 
     <div class="container">
         <div class="row justify-content-center"> 
             <div class="col-lg-7">
-                <div class="card shadow-lg border-0 rounded-lg my-5">
+                <div class="card border-0 rounded-lg my-5">
                     <div class="card-header">
                         <h4 class="text-center font-weight-light my-4">Tambah Akun Petty Cash</h4>
                     </div>

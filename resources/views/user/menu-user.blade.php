@@ -3,8 +3,7 @@
 @section('content') 
 
 <div class="card-header">
-        <i class="fas fa-table mr-1"></i>
-        Data > Tambah User
+        Data User > Tambah User
 </div>
 
 <main> 
