@@ -30,7 +30,7 @@
 <nav>
 <div class="list-group list-group-flush mt-4">
     <a
-    href="{{ route('all.employee') }}"
+    href="{{ route('menu.dashboard') }}"
     class="list-group-item list-group-item-action py-3 ripple"
     aria-current="true"
     >

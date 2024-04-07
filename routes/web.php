@@ -15,6 +15,7 @@ use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\MenuJenisPembelianController;
 use App\Http\Controllers\MenuLaporanController;
 use App\Http\Controllers\MenuTransaksiController;
+use App\Http\Controllers\MenuDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,9 @@ Route::get('/edit-employee/{id}',[EmployeeController::class,'editEmployee'])->na
 Route::put('/update-employee/{id}',[EmployeeController::class,'updateEmployee'])->name('update.employee');
 Route::get('/confirm-delete-employee/{id}',[EmployeeController::class,'confirmDeleteEmployee'])->name('confirm.delete.employee');
 Route::get('/delete-employee/{id}',[EmployeeController::class,'deleteEmployee'])->name('delete.employee'); 
+
+// menu dashboard
+Route::get('/menu-dashboard',[MenuDashboardController::class,'menuDashboard'])->name('menu.dashboard');
 
 // menu transaksi
 Route::get('/menu-transaksi',[MenuTransaksiController::class,'menuTransaksi'])->name('menu.transaksi');
