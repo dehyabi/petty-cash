@@ -39,6 +39,12 @@ if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 
     $pathLokasi = 'active';
 }
 
+$pathUser = $_SERVER['REQUEST_URI'];
+$pathUser = ltrim($pathUser, '/'); 
+if ($pathUser === 'add-user' || $pathUser === 'add-group-user') {
+    $pathUser = 'active';
+}
+
 @endphp
 
 <nav>
@@ -59,7 +65,7 @@ if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 
     <a href="{{ route('menu.petty.cash') }}" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-wallet"></i><span> Petty Cash</span>
     </a>
-    <a href="{{ route('menu.user') }}" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('menu.user') }}" class="list-group-item list-group-item-action py-3 {{ $pathUser }}"
     ><i class="fasx fas fa-user"></i><span> Data User</span></a
     >
     <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3 {{ $pathLokasi }}"
