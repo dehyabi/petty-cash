@@ -20,10 +20,12 @@
                 <thead>
                     <tr>
                         <th>Tanggal</th>
+                        <th>Toko</th>
+                        <th>Akun</th>
+                        <th>User</th>
                         <th>Jenis Pembelian</th>
                         <th>Penerimaan</th>
                         <th>Pengeluaran</th>
-                        <th>Akun Petty Cash</th>
                     </tr>
                 </thead>
                 <tbody>
