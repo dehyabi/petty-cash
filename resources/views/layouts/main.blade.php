@@ -42,10 +42,10 @@
     <a href="#" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-chart-bar"></i><span> Laporan</span>
     </a>
-    <a href="#" class="list-group-item list-group-item-action py-3">
+    <a href="{{ route('menu.petty.cash') }}" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-wallet"></i><span> Petty Cash</span>
     </a>
-    <a href="{{ route('menu.user') }}"" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('menu.user') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-user"></i><span> Data User</span></a
     >
     <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3"

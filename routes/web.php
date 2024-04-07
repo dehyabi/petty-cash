@@ -8,6 +8,8 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GroupUserController;
 use App\Http\Controllers\PettyCashController;
+use App\Http\Controllers\GroupPettyCashController;
+use App\Http\Controllers\MenuPettyCashController;
 use App\Http\Controllers\MenuLokasiController;
 use App\Http\Controllers\MenuUserController;
 
@@ -36,8 +38,26 @@ Route::put('/update-employee/{id}',[EmployeeController::class,'updateEmployee'])
 Route::get('/confirm-delete-employee/{id}',[EmployeeController::class,'confirmDeleteEmployee'])->name('confirm.delete.employee');
 Route::get('/delete-employee/{id}',[EmployeeController::class,'deleteEmployee'])->name('delete.employee'); 
 
-// petty cash 
+// menu petty cash 
+Route::get('/menu-petty-cash',[MenuPettyCashController::class,'menuPettyCash'])->name('menu.petty.cash');
+
+// petty cash
 Route::get('/add-petty-cash',[PettyCashController::class,'addPettyCash'])->name('add.petty.cash');
+Route::post('/store-petty-cash',[PettyCashController::class,'storePettyCash'])->name('store.petty.cash');
+Route::get('/all-petty-cash',[PettyCashController::class,'allPettyCash'])->name('all.petty.cash');
+Route::get('/edit-petty-cash/{id}',[PettyCashController::class,'editPettyCash'])->name('edit.petty.cash');
+Route::put('/update-petty-cash/{id}',[PettyCashController::class,'updatePettyCash'])->name('update.petty.cash');
+Route::get('/confirm-delete-petty-cash/{id}',[PettyCashController::class,'confirmDeletePettyCash'])->name('confirm.delete.petty.cash');
+Route::get('/delete-petty-cash/{id}',[PettyCashController::class,'deletePettyCash'])->name('delete.petty.cash');
+
+// group petty cash
+Route::get('/add-group-petty-cash',[GroupPettyCashController::class,'addGroupPettyCash'])->name('add.group.petty.cash');
+Route::post('/store-group-petty-cash',[GroupPettyCashController::class,'storeGroupPettyCash'])->name('store.group.petty.cash');
+Route::get('/all-group-petty-cash',[GroupPettyCashController::class,'allGroupPettyCash'])->name('all.group.petty.cash');
+Route::get('/edit-group-petty-cash/{id}',[GroupPettyCashController::class,'editGroupPettyCash'])->name('edit.group.petty.cash');
+Route::put('/update-group-petty-cash/{id}',[GroupPettyCashController::class,'updateGroupPettyCash'])->name('update.group.petty.cash');
+Route::get('/confirm-delete-group-petty-cash/{id}',[GroupPettyCashController::class,'confirmDeleteGroupPettyCash'])->name('confirm.delete.group.petty.cash');
+Route::get('/delete-group-petty-cash/{id}',[GroupPettyCashController::class,'deleteGroupPettyCash'])->name('delete.group.petty.cash');
 
 // menu user
 Route::get('/menu-user',[MenuUserController::class,'menuUser'])->name('menu.user');
