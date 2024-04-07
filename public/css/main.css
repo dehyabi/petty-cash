@@ -1,5 +1,5 @@
 .sidebar-wrapper {
-    max-width: 220px;
+    width: 220px;
     background-color: grey;
     height: 100vh;
     position: fixed;
@@ -36,5 +36,5 @@
 }
 
 .btn-outline-dark:hover {
-    background-color: rgb(100, 100, 100) !important;
+    background-color: rgb(180, 180, 180) !important;
 }

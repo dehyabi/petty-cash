@@ -30,7 +30,7 @@
 <nav>
 <div class="list-group list-group-flush mt-4">
     <a
-    href="#"
+    href="{{ route('all.employee') }}"
     class="list-group-item list-group-item-action py-3 ripple"
     aria-current="true"
     >
@@ -42,13 +42,13 @@
     <a href="#" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-chart-bar"></i><span> Laporan</span>
     </a>
-    <a href="#" class="list-group-item list-group-item-action py-3 active">
+    <a href="#" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-wallet"></i><span> Petty Cash</span>
     </a>
     <a href="#" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-user"></i><span> Data User</span></a
     >
-    <a href="#" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('add.lokasi') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-store"></i><span> Lokasi Outlet</span></a
     >
     <a href="#" class="list-group-item list-group-item-action py-3"
@@ -77,6 +77,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+
+        <script src="{{ asset('js') }}/main.js"></script>
 
         @yield('script')
 

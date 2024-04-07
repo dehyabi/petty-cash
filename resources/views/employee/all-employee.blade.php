@@ -1,4 +1,4 @@
-@extends('layouts.layout-employee')
+@extends('layouts.main')
 @section('content')
 <div class="card mb-4">
     <div class="card-header">
