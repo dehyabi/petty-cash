@@ -17,18 +17,19 @@
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
                     <div class="card-body">
-                        <form method="POST" action="{{ route('store.employee') }}" enctype="multipart/form-data">
-                            @csrf
                             <div class="form-row">
                                 <div class="col-md">
-                                <button class="py-3 btn btn-outline-dark btn-block">Kota</button>
-                                <button class="py-3 btn btn-outline-dark btn-block my-4">Area</button>
+                                    <a href="{{ route('add.city') }}">
+                                <button class="py-3 btn btn-outline-dark btn-block">Kota</button></a>
+                                
+                                <a href="{{ route('add.area') }}">
+                                <button class="py-3 btn btn-outline-dark btn-block my-4">Area</button></a>
+                                
+                                <a href="{{ route('add.site') }}">
                                 <button class="py-3 btn btn-outline-dark btn-block">Site</button>
                                 </div>
+                                </a>
                             </div>
- 
-                            <div class="form-group mt-3 mb-0 text-center"><a href="{{ route('all.employee') }}">Cancel</a></div>
-                        </form>
                     </div>
                 </div>
             </div>

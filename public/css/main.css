@@ -38,3 +38,7 @@
 .btn-outline-dark:hover {
     background-color: rgb(180, 180, 180) !important;
 }
+
+a {
+    text-decoration: none !important;
+}
