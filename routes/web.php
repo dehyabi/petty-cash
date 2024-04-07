@@ -12,6 +12,7 @@ use App\Http\Controllers\GroupPettyCashController;
 use App\Http\Controllers\MenuPettyCashController;
 use App\Http\Controllers\MenuLokasiController;
 use App\Http\Controllers\MenuUserController;
+use App\Http\Controllers\MenuJenisPembelianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +111,6 @@ Route::get('/edit-site/{id}',[siteController::class,'editSite'])->name('edit.sit
 Route::put('/update-site/{id}',[siteController::class,'updateSite'])->name('update.site');
 Route::get('/confirm-delete-site/{id}',[siteController::class,'confirmDeleteSite'])->name('confirm.delete.site');
 Route::get('/delete-site/{id}',[siteController::class,'deleteSite'])->name('delete.site');
+
+// menu jenis pembelian
+Route::get('/menu-jenis-pembelian',[MenuJenisPembelianController::class,'menuJenisPembelian'])->name('menu.jenis.pembelian');

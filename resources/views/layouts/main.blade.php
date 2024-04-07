@@ -51,7 +51,7 @@
     <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-store"></i><span> Lokasi Outlet</span></a
     >
-    <a href="#" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('menu.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-layer-group"></i><span> Jenis Pembelian</span></a
     >
 </nav>
