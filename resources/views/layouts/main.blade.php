@@ -45,6 +45,12 @@ if ($pathUser === 'add-user' || $pathUser === 'add-group-user') {
     $pathUser = 'active';
 }
 
+$pathPettyCash = $_SERVER['REQUEST_URI'];
+$pathPettyCash = ltrim($pathPettyCash, '/'); 
+if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-cash') {
+    $pathPettyCash = 'active';
+}
+
 @endphp
 
 <nav>
@@ -62,7 +68,7 @@ if ($pathUser === 'add-user' || $pathUser === 'add-group-user') {
     <a href="{{ route('menu.laporan') }}" class="list-group-item list-group-item-action py-3">
     <i class="fasx fas fa-chart-bar"></i><span> Laporan</span>
     </a>
-    <a href="{{ route('menu.petty.cash') }}" class="list-group-item list-group-item-action py-3">
+    <a href="{{ route('menu.petty.cash') }}" class="list-group-item list-group-item-action py-3 {{ $pathPettyCash }}">
     <i class="fasx fas fa-wallet"></i><span> Petty Cash</span>
     </a>
     <a href="{{ route('menu.user') }}" class="list-group-item list-group-item-action py-3 {{ $pathUser }}"
