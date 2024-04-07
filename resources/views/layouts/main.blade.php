@@ -31,12 +31,12 @@
         
 @php
 
-$path = $_SERVER['REQUEST_URI'];
+$pathLokasi = $_SERVER['REQUEST_URI'];
 
-$path = ltrim($path, '/'); 
+$pathLokasi = ltrim($pathLokasi, '/'); 
 
-if ($path === 'add-city') {
-    $path = 'active';
+if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site') {
+    $pathLokasi = 'active';
 }
 
 @endphp
@@ -62,7 +62,7 @@ if ($path === 'add-city') {
     <a href="{{ route('menu.user') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-user"></i><span> Data User</span></a
     >
-    <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3 {{ $path }}"
+    <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3 {{ $pathLokasi }}"
     ><i class="fasx fas fa-store"></i><span> Lokasi Outlet</span></a
     >
     <a href="{{ route('menu.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3"
