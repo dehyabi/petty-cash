@@ -27,6 +27,20 @@
            <div class="row">
             <div class="col left-side">
             <div class="sidebar-wrapper">
+
+        
+@php
+
+$path = $_SERVER['REQUEST_URI'];
+
+$path = ltrim($path, '/'); 
+
+if ($path === 'add-city') {
+    $path = 'active';
+}
+
+@endphp
+
 <nav>
 <div class="list-group list-group-flush mt-4">
     <a
@@ -48,7 +62,7 @@
     <a href="{{ route('menu.user') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-user"></i><span> Data User</span></a
     >
-    <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3 {{ $path }}"
     ><i class="fasx fas fa-store"></i><span> Lokasi Outlet</span></a
     >
     <a href="{{ route('menu.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3"
@@ -57,6 +71,7 @@
 </nav>
 </div>
 </div>
+
 <div class="col right-side">
 <div class="text-center">
     <h4 class="my-3">Petty Cash Management</h4>
