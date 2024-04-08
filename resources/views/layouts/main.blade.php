@@ -47,7 +47,7 @@ if ($pathUser === 'add-user' || $pathUser === 'add-group-user' || $pathUser === 
 
 $pathPettyCash = $_SERVER['REQUEST_URI'];
 $pathPettyCash = ltrim($pathPettyCash, '/'); 
-if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-cash') {
+if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-cash' || $pathPettyCash === 'all-group-petty-cash' || $pathPettyCash === 'all-petty-cash') {
     $pathPettyCash = 'active';
 }
 

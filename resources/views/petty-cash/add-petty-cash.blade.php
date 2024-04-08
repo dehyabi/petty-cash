@@ -3,7 +3,7 @@
 @section('content') 
 
 <div class="card-header">
-        Petty Cash > Tambah Akun Petty Cash
+        <a href="{{ route('all.petty.cash') }}"><i class="fas fa-arrow-left"></i></a> <span class="ml-2">Petty Cash > Tambah Akun Petty Cash</span>
 </div>
 
 <main> 
@@ -37,8 +37,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block">Tambah Akun Petty Cash</button></div>        
-                            <div class="form-group mt-3 mb-0"><a href="{{ route('menu.petty.cash') }}"><i class="fas fa-arrow-left"></i> <span> Back</span></a></div>
+                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block mb-4">Tambah Akun Petty Cash</button></div>        
                         </form>
                     </div>
                 </div>
