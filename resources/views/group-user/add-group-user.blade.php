@@ -18,13 +18,13 @@
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
                     <div class="card-body">
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.group.user') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Nama Group User</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="group_user">Nama Group User</label>
+                                        <input required class="form-control py-4" name="group_user" type="text" value="">
                                     </div>
                                 </div>
                             </div>

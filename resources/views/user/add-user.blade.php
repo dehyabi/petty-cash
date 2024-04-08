@@ -18,7 +18,7 @@
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
                     <div class="card-body">
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.user') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md">
@@ -26,9 +26,14 @@
                                         <label class="small mb-1" for="nama">Nama User</label>
                                         <input required class="form-control py-4" name="nama" type="text" value="">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="nama">Group User</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                    <div class="form-group"> 
+                                        <label class="small mb-1" for="group_user">Group User</label>
+                                        <select required class="py-3 form-site" name="group_user" type="text" value="">
+                                            <option value=""></option>
+                                        @foreach($group_users as $group_user)
+                                            <option value="{{ $group_user->id }}">{{ $group_user->group_user }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>
