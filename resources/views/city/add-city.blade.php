@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block">Tambah Kota</button></div>        
-                            <div class="form-group mt-3 mb-0"><a href="{{ route('menu.lokasi') }}"><i class="fas fa-arrow-left"></i> <span> Back</span></a></div>
+                            <div class="form-group mt-3 mb-0"><a href="{{ route('master.lokasi') }}"><i class="fas fa-arrow-left"></i> <span> Back</span></a></div>
                         </form>
                     </div>
                 </div>

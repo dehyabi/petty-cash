@@ -35,7 +35,7 @@ $pathLokasi = $_SERVER['REQUEST_URI'];
 
 $pathLokasi = ltrim($pathLokasi, '/'); 
 
-if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site') {
+if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site' || $pathLokasi === 'master-lokasi' || $pathLokasi === 'daftar-outlet') {
     $pathLokasi = 'active';
 }
 

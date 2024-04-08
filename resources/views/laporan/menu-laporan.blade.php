@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>Tanggal</th>
-                        <th>Toko</th>
+                        <th>Outlet</th>
                         <th>Akun</th>
                         <th>User</th>
                         <th>Jenis Pembelian</th>

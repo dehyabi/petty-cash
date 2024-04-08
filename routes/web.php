@@ -16,6 +16,8 @@ use App\Http\Controllers\MenuJenisPembelianController;
 use App\Http\Controllers\MenuLaporanController;
 use App\Http\Controllers\MenuTransaksiController;
 use App\Http\Controllers\MenuDashboardController;
+use App\Http\Controllers\MasterLokasiController;
+use App\Http\Controllers\OutletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +116,12 @@ Route::get('/edit-site/{id}',[siteController::class,'editSite'])->name('edit.sit
 Route::put('/update-site/{id}',[siteController::class,'updateSite'])->name('update.site');
 Route::get('/confirm-delete-site/{id}',[siteController::class,'confirmDeleteSite'])->name('confirm.delete.site');
 Route::get('/delete-site/{id}',[siteController::class,'deleteSite'])->name('delete.site');
+
+// daftar outlet
+Route::get('/daftar-outlet',[OutletController::class,'daftarOutlet'])->name('daftar.outlet');
+
+// master lokasi
+Route::get('/master-lokasi',[MasterLokasiController::class,'masterLokasi'])->name('master.lokasi');
 
 // menu jenis pembelian
 Route::get('/menu-jenis-pembelian',[MenuJenisPembelianController::class,'menuJenisPembelian'])->name('menu.jenis.pembelian');

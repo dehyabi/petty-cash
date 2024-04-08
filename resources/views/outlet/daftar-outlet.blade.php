@@ -4,7 +4,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col">
-                Transaksi > Transaksi Petty Cash
+                Lokasi Outlet > Daftar Outlet
             </div>
             <div class="col text-right">
                 <a href="" ><button class="btn btn-info">Add</button></a>
@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>Tanggal</th>
-                        <th>Outlet</th>
+                        <th>Toko</th>
                         <th>Jenis Pembelian</th>
                         <th>Akun</th>
                         <th>User</th>
