@@ -17,6 +17,7 @@ use App\Http\Controllers\MenuLaporanController;
 use App\Http\Controllers\MenuTransaksiController;
 use App\Http\Controllers\MenuDashboardController;
 use App\Http\Controllers\MasterLokasiController;
+use App\Http\Controllers\MasterUserController;
 use App\Http\Controllers\OutletController;
 
 /*
@@ -67,6 +68,7 @@ Route::get('/delete-group-petty-cash/{id}',[GroupPettyCashController::class,'del
 
 // menu user
 Route::get('/menu-user',[MenuUserController::class,'menuUser'])->name('menu.user');
+Route::get('/master-user',[MasterUserController::class,'masterUser'])->name('master.user');
 
 // user
 Route::get('/add-user',[userController::class,'addUser'])->name('add.user');
@@ -85,7 +87,6 @@ Route::get('/edit-group-user/{id}',[GroupUserController::class,'editGroupUser'])
 Route::put('/update-group-user/{id}',[GroupUserController::class,'updateGroupUser'])->name('update.group.user');
 Route::get('/confirm-delete-group-user/{id}',[GroupUserController::class,'confirmDeleteGroupUser'])->name('confirm.delete.group.user');
 Route::get('/delete-group-user/{id}',[GroupUserController::class,'deleteGroupUser'])->name('delete.group.user');
-
 
 // menu lokasi
 Route::get('/menu-lokasi',[MenuLokasiController::class,'menuLokasi'])->name('menu.lokasi');

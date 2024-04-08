@@ -35,13 +35,13 @@ $pathLokasi = $_SERVER['REQUEST_URI'];
 
 $pathLokasi = ltrim($pathLokasi, '/'); 
 
-if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site' || $pathLokasi === 'master-lokasi' || $pathLokasi === 'daftar-outlet' || $pathLokasi === 'all-city' || $pathLokasi === 'all-area' || $pathLokasi === 'all-site') {
+if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site' || $pathLokasi === 'master-lokasi' || $pathLokasi === 'daftar-outlet' || $pathLokasi === 'all-city' || $pathLokasi === 'all-area' || $pathLokasi === 'all-site' || $pathLokasi === 'all-outlet' || $pathLokasi === 'add-outlet') {
     $pathLokasi = 'active';
 }
 
 $pathUser = $_SERVER['REQUEST_URI'];
 $pathUser = ltrim($pathUser, '/'); 
-if ($pathUser === 'add-user' || $pathUser === 'add-group-user') {
+if ($pathUser === 'add-user' || $pathUser === 'add-group-user' || $pathUser === 'all-user' || $pathUser === 'all-group-user') {
     $pathUser = 'active';
 }
 
@@ -49,6 +49,13 @@ $pathPettyCash = $_SERVER['REQUEST_URI'];
 $pathPettyCash = ltrim($pathPettyCash, '/'); 
 if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-cash') {
     $pathPettyCash = 'active';
+}
+
+
+$pathJenisPembelian = $_SERVER['REQUEST_URI'];
+$pathJenisPembelian = ltrim($pathJenisPembelian, '/'); 
+if ($pathJenisPembelian === 'add-jenis-pembelian') {
+    $pathJenisPembelian = 'active';
 }
 
 @endphp
@@ -77,7 +84,7 @@ if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-c
     <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3 {{ $pathLokasi }}"
     ><i class="fasx fas fa-store"></i><span> Lokasi Outlet</span></a
     >
-    <a href="{{ route('all.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('all.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3 {{ $pathJenisPembelian }}"
     ><i class="fasx fas fa-layer-group"></i><span> Jenis Pembelian</span></a
     >
 </nav>

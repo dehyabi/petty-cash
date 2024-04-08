@@ -3,7 +3,7 @@
 @section('content') 
 
 <div class="card-header">
-        Data User > Tambah Group User
+    <a href="{{ route('all.group.user') }}"><i class="fas fa-arrow-left"></i></a> <span class="ml-2">Data User > Tambah Group User</span>
 </div>
 
 <main> 
@@ -29,8 +29,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block">Tambah Group User</button></div>        
-                            <div class="form-group mt-3 mb-0"><a href="{{ route('menu.user') }}"><i class="fas fa-arrow-left"></i> <span> Back</span></a></div>
+                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block mb-4">Tambah Group User</button></div>        
                         </form>
                     </div>
                 </div>
