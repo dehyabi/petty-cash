@@ -18,25 +18,40 @@
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
                     <div class="card-body">
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.outlet') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Outlet</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="outlet">Outlet</label>
+                                        <input required class="form-control py-4" name="outlet" type="text" value="">
                                     </div>
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Site</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="site">Site</label>
+                                        <select required class="py-3 form-site" name="site" type="text" value="">
+                                            <option value=""></option>
+                                        @foreach($sites as $site)
+                                            <option value="{{ $site->id }}">{{ $site->site }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Area</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="area">Area</label>
+                                        <select required class="py-3 form-site" name="area" type="text" value="">
+                                            <option value=""></option>
+                                        @foreach($areas as $area)
+                                            <option value="{{ $area->id }}">{{ $area->area }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Kota</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="kota">Kota</label>
+                                        <select required class="py-3 form-site" name="kota" type="text" value="">
+                                            <option value=""></option>
+                                        @foreach($cities as $city)
+                                            <option value="{{ $city->id }}">{{ $city->kota }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

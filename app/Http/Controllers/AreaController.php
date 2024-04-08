@@ -28,7 +28,7 @@ class AreaController extends Controller
             ]);
         }
 
-        if (area::where('area', $area->area)->exists()) {
+        if (Area::where('area', $area->area)->exists()) {
             return redirect()->route('add.area')->with([
                 'error' => $area->area . ' sudah ditambahkan',
             ]);

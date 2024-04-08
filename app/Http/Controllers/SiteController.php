@@ -29,7 +29,7 @@ class SiteController extends Controller
             ]);
         }
 
-        if (site::where('site', $site->site)->exists()) {
+        if (Site::where('site', $site->site)->exists()) {
             return redirect()->route('add.site')->with([
                 'error' => $site->site . ' sudah ditambahkan',
             ]);
