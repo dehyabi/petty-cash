@@ -18,13 +18,13 @@
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
                     <div class="card-body">
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.area') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Nama Area</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="area">Area</label>
+                                        <input required class="form-control py-4" name="area" type="text" value="">
                                     </div>
                                 </div>
                             </div>

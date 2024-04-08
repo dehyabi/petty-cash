@@ -23,7 +23,7 @@
                             <div class="form-row">
                                 <div class="col-md">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="kota">Nama Kota</label>
+                                        <label class="small mb-1" for="kota">Kota</label>
                                         <input required class="form-control py-4" name="kota" type="text" value="{{ Session::get('city') }}">
                                     </div>
                                 </div>
