@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\City;use Illuminate\Http\Request;
+
 
 class CityController extends Controller
 {
@@ -10,4 +11,10 @@ class CityController extends Controller
         return view('city.add-city');
 
     }
+
+    public function allCity() {
+        $cities = City::all();
+        return view('city.all-city', compact('cities'));
+    }   
+
 }

@@ -3,7 +3,7 @@
 @section('content') 
 
 <div class="card-header">
-        Lokasi Outlet > Tambah Kota
+    <a href="{{ route('all.city') }}"><i class="fas fa-arrow-left"></i></a> <span class="ml-2">Lokasi Outlet > Master Lokasi > Tambah Kota</span>
 </div>
 
 <main> 
@@ -29,8 +29,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block">Tambah Kota</button></div>        
-                            <div class="form-group mt-3 mb-0"><a href="{{ route('master.lokasi') }}"><i class="fas fa-arrow-left"></i> <span> Back</span></a></div>
+                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block mb-4">Tambah Kota</button></div>        
                         </form>
                     </div>
                 </div>

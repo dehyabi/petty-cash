@@ -3,11 +3,11 @@
 <div class="card mb-4">
     <div class="card-header">
         <div class="row">
-            <div class="col">
-                Lokasi Outlet > Daftar Outlet
+            <div class="col-8">
+                <a href="{{ route('menu.lokasi') }}"><i class="fas fa-arrow-left"></i></a> <span class="ml-2">Lokasi Outlet > Daftar Outlet</span>
             </div>
             <div class="col text-right">
-                <a href="" ><button class="btn btn-info">Add</button></a>
+                <a href="{{ route('add.outlet') }}" ><button class="btn btn-info">Add</button></a>
             </div>
         </div>
     </div>

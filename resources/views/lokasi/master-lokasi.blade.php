@@ -3,7 +3,7 @@
 @section('content') 
 
 <div class="card-header">
-        Lokasi Outlet > Master Lokasi
+    <a href="{{ route('menu.lokasi') }}"><i class="fas fa-arrow-left"></i></a> <span class="ml-2"> Lokasi Outlet > Master Lokasi
 </div>
 
 <main> 
@@ -15,19 +15,18 @@
                     @if (Session::has('error'))
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
-                    <div class="card-body">
+                    <div class="card-body mb-4">
                             <div class="form-row">
                                 <div class="col-md">
-                                    <a href="{{ route('add.city') }}" class="menu-lokasi">
+                                <a href="{{ route('all.city') }}" class="menu-lokasi">
                                 <button class="py-3 btn btn-outline-dark btn-block">Daftar Kota</button></a>
                                 
-                                <a href="{{ route('add.area') }}" class="menu-lokasi">
+                                <a href="{{ route('all.area') }}" class="menu-lokasi">
                                 <button class="py-3 btn btn-outline-dark btn-block my-4">Daftar Area</button></a>
                                 
-                                <a href="{{ route('add.site') }}" class="menu-lokasi">
-                                <button class="py-3 btn btn-outline-dark btn-block">Daftar Site</button>
+                                <a href="{{ route('all.site') }}" class="menu-lokasi">
+                                <button class="py-3 btn btn-outline-dark btn-block">Daftar Site</button> </a>
                                 </div>
-                                </a>
                             </div>
                     </div>
                 </div>

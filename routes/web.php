@@ -117,8 +117,14 @@ Route::put('/update-site/{id}',[siteController::class,'updateSite'])->name('upda
 Route::get('/confirm-delete-site/{id}',[siteController::class,'confirmDeleteSite'])->name('confirm.delete.site');
 Route::get('/delete-site/{id}',[siteController::class,'deleteSite'])->name('delete.site');
 
-// daftar outlet
-Route::get('/daftar-outlet',[OutletController::class,'daftarOutlet'])->name('daftar.outlet');
+// outlet
+Route::get('/add-outlet',[OutletController::class,'addOutlet'])->name('add.outlet');
+Route::post('/store-outlet',[OutletController::class,'storeOutlet'])->name('store.outlet');
+Route::get('/all-outlet',[OutletController::class,'allOutlet'])->name('all.outlet');
+Route::get('/edit-outlet/{id}',[OutletController::class,'editOutlet'])->name('edit.outlet');
+Route::put('/update-outlet/{id}',[OutletController::class,'updateOutlet'])->name('update.outlet');
+Route::get('/confirm-delete-outlet/{id}',[OutletController::class,'confirmDeleteOutlet'])->name('confirm.delete.outlet');
+Route::get('/delete-outlet/{id}',[OutletController::class,'deleteOutlet'])->name('delete.outlet');
 
 // master lokasi
 Route::get('/master-lokasi',[MasterLokasiController::class,'masterLokasi'])->name('master.lokasi');

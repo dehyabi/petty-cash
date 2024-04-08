@@ -18,7 +18,7 @@
                     <div class="card-body">
                             <div class="form-row">
                                 <div class="col-md">
-                                    <a href="{{ route('daftar.outlet') }}"" class="menu-lokasi">
+                                    <a href="{{ route('all.outlet') }}"" class="menu-lokasi">
                                 <button class="py-3 btn btn-outline-dark btn-block">Daftar Outlet</button></a>
                                 
                                 <a href="{{ route('master.lokasi') }}" class="menu-lokasi">

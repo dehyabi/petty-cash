@@ -11,13 +11,6 @@
 
 <div class="row my-3 text-center">
     <div class="col-md">
-        <a class="card-link" href="{{ route('menu.lokasi') }}">
-        <div class="card-db card-left card py-5 my-2">
-            Lokasi Outlet
-        </div>
-        </a>
-    </div>
-    <div class="col-md">
         <a class="card-link" href="{{ route('menu.transaksi') }}">
         <div class="card-db card-middle card py-5 my-2">
             Transaksi
@@ -28,6 +21,13 @@
         <a class="card-link" href="{{ route('menu.laporan') }}">
         <div class="card-db card-right card py-5 my-2">
             Laporan
+        </div>
+        </a>
+    </div>
+    <div class="col-md">
+        <a class="card-link" href="{{ route('daftar.outlet') }}">
+        <div class="card-db card-left card py-5 my-2">
+            Lokasi Outlet
         </div>
         </a>
     </div>
