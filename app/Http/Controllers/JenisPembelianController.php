@@ -13,7 +13,31 @@ class JenisPembelianController extends Controller
     }
 
     public function allJenisPembelian() {
-        $jenis_pembelian = JenisPembelian::all();
-        return view('jenis-pembelian.all-jenis-pembelian', compact('jenis_pembelian'));
+        $jenis_pembelians = JenisPembelian::all();
+        return view('jenis-pembelian.all-jenis-pembelian', compact('jenis_pembelians'));
     }  
+
+    public function storeJenisPembelian(Request $request) {
+        $jenis_pembelian = new JenisPembelian;
+        $jenis_pembelian->jenis_pembelian=$request->jenis_pembelian;
+
+        if (is_null($jenis_pembelian->jenis_pembelian)) {
+            return redirect()->route('add.jenis.pembelian')->with([
+                'error' => 'Silakan isi jenis pembelian',
+                'jenis_pembelian' => $jenis_pembelian->jenis_pembelian
+            ]);
+        }
+
+        if (JenisPembelian::where('jenis_pembelian', $jenis_pembelian->jenis_pembelian)->exists()) {
+            return redirect()->route('add.jenis_pembelian')->with([
+                'error' => $jenis_pembelian->jenis_pembelian . ' sudah ditambahkan',
+            ]);
+        }
+
+        $jenis_pembelian->save();
+        
+        return redirect()->route('all.jenis.pembelian')->with([
+            'success' => $jenis_pembelian->jenis_pembelian . ' berhasil ditambahkan'
+        ]);
+    }
 }
