@@ -30,17 +30,8 @@ use App\Http\Controllers\MenuDashboardController;
 
 //redirect route
 Route::get('/', function () {
-    return redirect()->route('all.employee');
+    return redirect()->route('menu.dashboard');
 });
-
-//employee routes
-Route::get('/add-employee',[EmployeeController::class,'addEmployee'])->name('add.employee');
-Route::post('/store-employee',[EmployeeController::class,'storeEmployee'])->name('store.employee');
-Route::get('/all-employee',[EmployeeController::class,'allEmployee'])->name('all.employee');
-Route::get('/edit-employee/{id}',[EmployeeController::class,'editEmployee'])->name('edit.employee');
-Route::put('/update-employee/{id}',[EmployeeController::class,'updateEmployee'])->name('update.employee');
-Route::get('/confirm-delete-employee/{id}',[EmployeeController::class,'confirmDeleteEmployee'])->name('confirm.delete.employee');
-Route::get('/delete-employee/{id}',[EmployeeController::class,'deleteEmployee'])->name('delete.employee'); 
 
 // menu dashboard
 Route::get('/menu-dashboard',[MenuDashboardController::class,'menuDashboard'])->name('menu.dashboard');
