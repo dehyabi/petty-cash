@@ -12,7 +12,7 @@ use App\Http\Controllers\GroupPettyCashController;
 use App\Http\Controllers\MenuPettyCashController;
 use App\Http\Controllers\MenuLokasiController;
 use App\Http\Controllers\MenuUserController;
-use App\Http\Controllers\MenuJenisPembelianController;
+use App\Http\Controllers\JenisPembelianController;
 use App\Http\Controllers\MenuLaporanController;
 use App\Http\Controllers\MenuTransaksiController;
 use App\Http\Controllers\MenuDashboardController;
@@ -129,5 +129,11 @@ Route::get('/delete-outlet/{id}',[OutletController::class,'deleteOutlet'])->name
 // master lokasi
 Route::get('/master-lokasi',[MasterLokasiController::class,'masterLokasi'])->name('master.lokasi');
 
-// menu jenis pembelian
-Route::get('/menu-jenis-pembelian',[MenuJenisPembelianController::class,'menuJenisPembelian'])->name('menu.jenis.pembelian');
+// jenis pembelian
+Route::get('/add-jenis-pembelian',[JenisPembelianController::class,'addJenisPembelian'])->name('add.jenis.pembelian');
+Route::post('/store-jenis-pembelian',[JenisPembelianController::class,'storeJenisPembelian'])->name('store.jenis.pembelian');
+Route::get('/all-jenis-pembelian',[JenisPembelianController::class,'allJenisPembelian'])->name('all.jenis.pembelian');
+Route::get('/edit-jenis-pembelian/{id}',[JenisPembelianController::class,'editJenisPembelian'])->name('edit.jenis.pembelian');
+Route::put('/update-jenis-pembelian/{id}',[JenisPembelianController::class,'updateJenisPembelian'])->name('update.jenis.pembelian');
+Route::get('/confirm-delete-jenis-pembelian/{id}',[JenisPembelianController::class,'confirmDeleteJenisPembelian'])->name('confirm.delete.jenis.pembelian');
+Route::get('/delete-jenis-pembelian/{id}',[JenisPembelianController::class,'deleteJenisPembelian'])->name('delete.jenis.pembelian');

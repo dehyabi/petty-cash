@@ -3,7 +3,7 @@
 @section('content') 
 
 <div class="card-header">
-        Jenis Pembelian > Tambah Jenis Pembelian
+    <a href="{{ route('all.jenis.pembelian') }}"><i class="fas fa-arrow-left"></i></a> <span class="ml-2">Jenis Pembelian > Tambah Jenis Pembelian</span>
 </div> 
 
 <main> 
@@ -29,8 +29,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block">Tambah Jenis Pembelian</button></div>        
-                            <div class="form-group mt-3 mb-0"><a href="{{ route('menu.user') }}"><i class="fas fa-arrow-left"></i> <span> Back</span></a></div>
+                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block mb-4">Tambah Jenis Pembelian</button></div>        
                         </form>
                     </div>
                 </div>

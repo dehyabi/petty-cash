@@ -25,7 +25,7 @@
         </a>
     </div>
     <div class="col-md">
-        <a class="card-link" href="{{ route('daftar.outlet') }}">
+        <a class="card-link" href="{{ route('all.outlet') }}">
         <div class="card-db card-left card py-5 my-2">
             Lokasi Outlet
         </div>

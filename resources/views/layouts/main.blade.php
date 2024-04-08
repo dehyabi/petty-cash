@@ -77,7 +77,7 @@ if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-c
     <a href="{{ route('menu.lokasi') }}" class="list-group-item list-group-item-action py-3 {{ $pathLokasi }}"
     ><i class="fasx fas fa-store"></i><span> Lokasi Outlet</span></a
     >
-    <a href="{{ route('menu.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3"
+    <a href="{{ route('all.jenis.pembelian') }}" class="list-group-item list-group-item-action py-3"
     ><i class="fasx fas fa-layer-group"></i><span> Jenis Pembelian</span></a
     >
 </nav>
