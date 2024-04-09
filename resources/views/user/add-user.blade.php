@@ -27,6 +27,15 @@
                                         <input required class="form-control py-4" name="nama" type="text" value="">
                                     </div>
                                     <div class="form-group"> 
+                                        <label class="small mb-1" for="outlet">Outlet</label>
+                                        <select required class="py-3 form-site" name="outlet" type="text" value="">
+                                            <option value=""></option>
+                                        @foreach($outlets as $outlet)
+                                            <option value="{{ $outlet->id }}">{{ $outlet->outlet }}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group"> 
                                         <label class="small mb-1" for="group_user">Group User</label>
                                         <select required class="py-3 form-site" name="group_user" type="text" value="">
                                             <option value=""></option>

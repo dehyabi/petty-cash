@@ -71,7 +71,7 @@
 <script>
    $('#dataTable').DataTable({
     columnDefs: [
-    {bSortable: false, targets: [7]} 
+    {bSortable: false, targets: [0]} 
   ],
                 dom: 'lBfrtip',
            buttons: [
@@ -81,7 +81,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6]
                    }
                },
                {
@@ -90,7 +90,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6]
                    }
                }
            ]

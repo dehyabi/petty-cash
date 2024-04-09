@@ -21,6 +21,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama</th>
+                        <th>Outlet</th>
                         <th>Group User</th>
                     </tr>
                 </thead>
@@ -33,6 +34,7 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $user->nama }}</td>
+                    <td>{{ $user->outlet }}</td>
                     <td>{{ $user->group_user }}</td>
                     <td>
                         <a href="{{ route('edit.user', $user->id) }}" class="btn btn-sm btn-info">Edit</a>
@@ -63,7 +65,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2]
+                    columns: [ 0, 1, 2, 3]
                    }
                },
                {
@@ -72,7 +74,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2]
+                    columns: [ 0, 1, 2, 3]
                    }
                }
            ]
