@@ -51,6 +51,26 @@
                     
                 </tbody>
             </table>
+
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Total Penerimaan</th>
+                        <th>Total Pengeluaran</th>
+                        <th>Saldo Petty Cash</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>{{ $totalKredit }}</td>
+                    <td>{{ $totalDebit }}</td>
+                    <td>{{ $totalKredit-$totalDebit }}</td>
+                </tr>
+                
+                    
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

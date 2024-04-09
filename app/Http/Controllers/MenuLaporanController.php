@@ -18,8 +18,11 @@ class MenuLaporanController extends Controller
         ->join('petty_cashes', 'petty_cashes.id', '=', 'transaksis.akun')
         ->join('users', 'users.id', '=', 'transaksis.user')
         ->get(['transaksis.*', 'outlets.outlet', 'jenis_pembelians.jenis_pembelian', 'petty_cashes.akun', 'users.nama']);
+
+        $totalKredit = Transaksi::sum('transaksis.kredit');
+        $totalDebit = Transaksi::sum('transaksis.debit');
         
-        return view('laporan.menu-laporan', compact('allTransaksi'));
+        return view('laporan.menu-laporan', compact('allTransaksi', 'totalDebit', 'totalKredit'));
 
     }
 }

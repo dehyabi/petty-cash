@@ -37,7 +37,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col text-center">
-                Laporan Petty Cash Periode April 2024
+                Laporan Petty Cash
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 <thead>
                     <tr>
                         <th>Tanggal</th>
-                        <th>Toko</th>
+                        <th>Outlet</th>
                         <th>Akun</th>
                         <th>User</th>
                         <th>Jenis Pembelian</th>

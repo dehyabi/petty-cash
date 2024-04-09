@@ -89,7 +89,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block mb-4">Tambah Outlet</button></div>        
+                            <div class="form-group mt-4 mb-0"><button class="btn btn-info btn-block mb-4">Tambah Transaksi</button></div>        
                         </form>
                     </div>
                 </div>
