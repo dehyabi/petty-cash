@@ -54,4 +54,71 @@ class OutletController extends Controller
             'success' => $outlet->outlet . ' berhasil ditambahkan'
         ]);
     }
+
+
+    public function editOutlet($id) {
+        $sites = Site::all();
+        $areas = Area::all();
+        $cities = City::all();
+
+        $outlet = Outlet::findOrfail($id);
+
+        return view('outlet.edit-outlet', compact('outlet', 'sites', 'areas', 'cities'));
+    }
+
+    public function updateOutlet(Request $request, $id) {
+        $this->validate($request, [
+            'outlet' => 'required'
+        ]);
+
+        $outlet = Outlet::findOrFail($id);       
+
+        $outlet->update([
+            'outlet' => $request->outlet,
+            'site' => $request->site,
+            'area' => $request->area,
+            'kota' => $request->kota
+        ]);
+
+        if ($outlet) {
+            return redirect()
+                ->route('all.outlet')
+                ->with([
+                    'success' => 'Data berhasil diupdate'
+                ]);
+        } else {
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with([
+                'error' => 'Terjadi kesalahan'
+            ]);
+        }
+    }
+
+    public function confirmDeleteOutlet($id) {
+
+        $outlet = Outlet::findOrfail($id);
+        return view('outlet.confirm-delete-outlet', compact('outlet'));
+    }
+
+    public function deleteOutlet($id) {
+        $outlet = Outlet::findOrFail($id);
+        $outlet->delete();
+
+        if ($outlet) {
+            return redirect()
+                ->route('all.outlet')
+                ->with([
+                    'success' => 'Data berhasil dihapus'
+                ]);
+        } else {
+            return redirect()
+                ->route('all.outlet')
+                ->with([
+                    'error' => 'Terjadi kesalahan'
+                ]);
+        }
+    }
+
 }
