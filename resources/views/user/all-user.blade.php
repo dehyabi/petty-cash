@@ -23,6 +23,7 @@
                         <th>Nama</th>
                         <th>Outlet</th>
                         <th>Group User</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

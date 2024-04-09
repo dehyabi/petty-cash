@@ -40,7 +40,7 @@ if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 
 
 $pathUser = $_SERVER['REQUEST_URI'];
 $pathUser = preg_replace('/[^a-zA-Z_-]/s','',$pathUser);
-if ($pathUser === 'add-user' || $pathUser === 'add-group-user' || $pathUser === 'all-user' || $pathUser === 'all-group-user') {
+if ($pathUser === 'add-user' || $pathUser === 'add-group-user' || $pathUser === 'all-user' || $pathUser === 'all-group-user' || $pathUser === 'edit-group-user' || $pathUser === 'confirm-delete-group-user') {
     $pathUser = 'active';
 }
 

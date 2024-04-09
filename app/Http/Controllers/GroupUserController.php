@@ -40,4 +40,64 @@ class GroupUserController extends Controller
             'success' => $group_user->group_user . ' berhasil ditambahkan'
         ]);
     }
+
+
+    public function editGroupUser($id) {
+
+        $group_user = GroupUser::findOrfail($id);
+        return view('group-user.edit-group-user', compact('group_user'));
+    }
+
+
+    public function updateGroupUser(Request $request, $id) {
+        $this->validate($request, [
+            'group_user' => 'required'
+        ]);
+
+        $group_user = GroupUser::findOrFail($id);       
+
+        $group_user->update([
+            'group_user' => $request->group_user
+        ]);
+
+        if ($group_user) {
+            return redirect()
+                ->route('all.group.user')
+                ->with([
+                    'success' => 'Data berhasil diupdate'
+                ]);
+        } else {
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with([
+                'error' => 'Terjadi kesalahan'
+            ]);
+        }
+    }
+
+    public function confirmDeleteGroupUser($id) {
+
+        $group_user = GroupUser::findOrfail($id);
+        return view('group-user.confirm-delete-group-user', compact('group_user'));
+    }
+
+    public function deleteGroupUser($id) {
+        $group_user = GroupUser::findOrFail($id);
+        $group_user->delete();
+
+        if ($group_user) {
+            return redirect()
+                ->route('all.group.user')
+                ->with([
+                    'success' => 'Data berhasil dihapus'
+                ]);
+        } else {
+            return redirect()
+                ->route('all.group.user')
+                ->with([
+                    'error' => 'Terjadi kesalahan'
+                ]);
+        }
+    }
 }
