@@ -19,18 +19,27 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Tanggal</th>
-                        <th>Toko</th>
-                        <th>Jenis Pembelian</th>
-                        <th>Akun</th>
-                        <th>User</th>
-                        <th>Debit</th>
-                        <th>Kredit</th>
+                        <th>No.</th>
+                        <th>Group Petty Cash</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                @php
+                    $no=1;
+                @endphp
 
+                @foreach($group_petty_cashes as $group_petty_cash)
+                <tr>
+                    <td>{{ $no++ }}</td>
+                    <td>{{ $group_petty_cash->group_petty_cash }}</td>
+                    <td>
+                        <a href="{{ route('edit.group.petty.cash', $group_petty_cash->id) }}" class="btn btn-sm btn-info">Edit</a>
+                        <a href="{{ route('confirm.delete.group.petty.cash', $group_petty_cash->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                
+                @endforeach
                     
                 </tbody>
             </table>

@@ -18,21 +18,34 @@
                         <div class="alert alert-danger mx-3 mt-3 text-center" role="alert">{{ Session::get('error') }}</div>
                     @endif                    
                     <div class="card-body">
-                        <form method="POST" action="" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('store.petty.cash') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Nomor Akun Petty Cash</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="nomor_akun">Nomor Akun Petty Cash</label>
+                                        <input required class="form-control py-4" name="nomor_akun" type="text" value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="nama">Akun Petty Cash</label>
-                                        <input required class="form-control py-4" name="nama" type="text" value="">
+                                        <label class="small mb-1" for="akun">Akun Petty Cash</label>
+                                        <input required class="form-control py-4" name="akun" type="text" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="group">Group Petty Cash</label>
+                                        <select required class="py-3 form-site" name="group" type="text" value="">
+                                            <option value=""></option>
+                                        @foreach($group_petty_cashes as $group_petty_cash)
+                                            <option value="{{ $group_petty_cash->id }}">{{ $group_petty_cash->group_petty_cash }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('nomor_akun');
             $table->string('akun');
+            $table->string('group');
             $table->timestamps();
         });
     }

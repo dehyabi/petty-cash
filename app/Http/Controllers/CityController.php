@@ -38,7 +38,7 @@ class CityController extends Controller
         $city->save();
         
         return redirect()->route('all.city')->with([
-            'success' => 'Kota '. $city->kota . ' berhasil ditambahkan'
+            'success' => $city->kota . ' berhasil ditambahkan'
         ]);
     }
 
