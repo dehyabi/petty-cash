@@ -40,4 +40,63 @@ class AreaController extends Controller
             'success' => $area->area . ' berhasil ditambahkan'
         ]);
     }   
+
+    public function editArea($id) {
+
+        $area = Area::findOrfail($id);
+        return view('area.edit-area', compact('area'));
+    }
+
+
+    public function updateArea(Request $request, $id) {
+        $this->validate($request, [
+            'area' => 'required'
+        ]);
+
+        $area = Area::findOrFail($id);       
+
+        $area->update([
+            'area' => $request->area
+        ]);
+
+        if ($area) {
+            return redirect()
+                ->route('all.area')
+                ->with([
+                    'success' => 'Data berhasil diupdate'
+                ]);
+        } else {
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with([
+                'error' => 'Terjadi kesalahan'
+            ]);
+        }
+    }
+
+    public function confirmDeleteArea($id) {
+
+        $area = Area::findOrfail($id);
+        return view('area.confirm-delete-area', compact('area'));
+    }
+
+    public function deleteArea($id) {
+        $area = Area::findOrFail($id);
+        $area->delete();
+
+        if ($area) {
+            return redirect()
+                ->route('all.area')
+                ->with([
+                    'success' => 'Data berhasil dihapus'
+                ]);
+        } else {
+            return redirect()
+                ->route('all.area')
+                ->with([
+                    'error' => 'Terjadi kesalahan'
+                ]);
+        }
+    }
 }
