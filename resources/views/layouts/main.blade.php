@@ -39,26 +39,25 @@ if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 
 }
 
 $pathUser = $_SERVER['REQUEST_URI'];
-$pathUser = ltrim($pathUser, '/'); 
+$pathUser = preg_replace('/[^a-zA-Z_-]/s','',$pathUser);
 if ($pathUser === 'add-user' || $pathUser === 'add-group-user' || $pathUser === 'all-user' || $pathUser === 'all-group-user') {
     $pathUser = 'active';
 }
 
 $pathPettyCash = $_SERVER['REQUEST_URI'];
-$pathPettyCash = ltrim($pathPettyCash, '/'); 
+$pathPettyCash = preg_replace('/[^a-zA-Z_-]/s','',$pathPettyCash);
 if ($pathPettyCash === 'add-petty-cash' || $pathPettyCash === 'add-group-petty-cash' || $pathPettyCash === 'all-group-petty-cash' || $pathPettyCash === 'all-petty-cash') {
     $pathPettyCash = 'active';
 }
 
-
 $pathJenisPembelian = $_SERVER['REQUEST_URI'];
-$pathJenisPembelian = ltrim($pathJenisPembelian, '/'); 
+$pathJenisPembelian = preg_replace('/[^a-zA-Z_-]/s','',$pathJenisPembelian);
 if ($pathJenisPembelian === 'add-jenis-pembelian') {
     $pathJenisPembelian = 'active';
 }
 
 $pathTransaksi = $_SERVER['REQUEST_URI'];
-$pathTransaksi = ltrim($pathTransaksi, '/'); 
+$pathTransaksi = preg_replace('/[^a-zA-Z_-]/s','',$pathTransaksi);
 if ($pathTransaksi === 'add-transaksi') {
     $pathTransaksi = 'active';
 }
