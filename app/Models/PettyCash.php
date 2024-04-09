@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PettyCash extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'nomor_akun',
+        'akun',
+        'group'
+    ];
 }

@@ -15,7 +15,6 @@ class PettyCashController extends Controller
     }
 
     public function allPettyCash() {
-        // $petty_cashes = PettyCash::all();
 
         $petty_cashes = PettyCash::join('group_petty_cashes', 'group_petty_cashes.id', '=', 'petty_cashes.group')
         ->get(['petty_cashes.*', 'group_petty_cashes.group_petty_cash']);
@@ -54,4 +53,68 @@ class PettyCashController extends Controller
             'success' => $petty_cash->akun . ' berhasil ditambahkan'
         ]);
     }
+
+
+    public function editPettyCash($id) {
+        $group_petty_cashes = GroupPettyCash::all();
+        $petty_cash = PettyCash::findOrfail($id);
+        return view('petty-cash.edit-petty-cash', compact('petty_cash', 'group_petty_cashes'));
+    }
+
+
+    public function updatePettyCash(Request $request, $id) {
+        $this->validate($request, [
+            'nomor_akun' => 'required',
+            'akun' => 'required'
+        ]);
+
+        $petty_cash = PettyCash::findOrFail($id);       
+
+        $petty_cash->update([
+            'nomor_akun' => $request->nomor_akun,
+            'akun' => $request->akun,
+            'group' => $request->group
+        ]);
+
+        if ($petty_cash) {
+            return redirect()
+                ->route('all.petty.cash')
+                ->with([
+                    'success' => 'Data berhasil diupdate'
+                ]);
+        } else {
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with([
+                'error' => 'Terjadi kesalahan'
+            ]);
+        }
+    }
+
+    public function confirmDeletePettyCash($id) {
+
+        $petty_cash = PettyCash::findOrfail($id);
+        return view('petty-cash.confirm-delete-petty-cash', compact('petty_cash'));
+    }
+
+    public function deletePettyCash($id) {
+        $petty_cash = PettyCash::findOrFail($id);
+        $petty_cash->delete();
+
+        if ($petty_cash) {
+            return redirect()
+                ->route('all.petty.cash')
+                ->with([
+                    'success' => 'Data berhasil dihapus'
+                ]);
+        } else {
+            return redirect()
+                ->route('all.petty.cash')
+                ->with([
+                    'error' => 'Terjadi kesalahan'
+                ]);
+        }
+    }
+
 }
