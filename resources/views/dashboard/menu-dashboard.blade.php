@@ -59,7 +59,28 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
+                @foreach($allTransaksi as $transaksi)
+                
+                @php
+                $created_at = explode(' ',$transaksi->created_at);
+                $created_at = $created_at[0]; 
 
+                $originalDate = $created_at;
+                $newDate = date("d-m-Y", strtotime($originalDate));
+                @endphp
+
+                <tr>
+                    <td>{{ $newDate }}</td>
+                    <td>{{ $transaksi->outlet }}</td>
+                    <td>{{ $transaksi->akun }}</td>
+                    <td>{{ $transaksi->nama }}</td>
+                    <td>{{ $transaksi->jenis_pembelian }}</td>
+                    <td>{{ $transaksi->kredit }}</td>
+                    <td>{{ $transaksi->debit }}</td>
+                </tr>
+                
+                @endforeach
                     
                 </tbody>
             </table>

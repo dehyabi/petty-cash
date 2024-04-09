@@ -30,10 +30,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                @php
-                    $no=1;
-                @endphp
-
                 @foreach($allTransaksi as $transaksi)
                 
                 @php

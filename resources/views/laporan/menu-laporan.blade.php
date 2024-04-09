@@ -6,9 +6,6 @@
             <div class="col">
                 Laporan > Laporan Petty Cash
             </div>
-            <div class="col text-right">
-                <a href="" ><button class="btn btn-info">Filter</button></a>
-            </div>
         </div>
     </div>
     <div class="card-body">
@@ -23,13 +20,34 @@
                         <th>Outlet</th>
                         <th>Akun</th>
                         <th>User</th>
-                        <th>Grouping Jenis Pembelian</th>
+                        <th>Jenis Pembelian</th>
                         <th>Penerimaan</th>
                         <th>Pengeluaran</th>
                     </tr>
                 </thead>
                 <tbody>
 
+                @foreach($allTransaksi as $transaksi)
+                
+                @php
+                $created_at = explode(' ',$transaksi->created_at);
+                $created_at = $created_at[0]; 
+
+                $originalDate = $created_at;
+                $newDate = date("d-m-Y", strtotime($originalDate));
+                @endphp
+
+                <tr>
+                    <td>{{ $newDate }}</td>
+                    <td>{{ $transaksi->outlet }}</td>
+                    <td>{{ $transaksi->akun }}</td>
+                    <td>{{ $transaksi->nama }}</td>
+                    <td>{{ $transaksi->jenis_pembelian }}</td>
+                    <td>{{ $transaksi->kredit }}</td>
+                    <td>{{ $transaksi->debit }}</td>
+                </tr>
+                
+                @endforeach
                     
                 </tbody>
             </table>
@@ -53,7 +71,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6]
                    }
                },
                {
@@ -62,7 +80,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4 ]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6 ]
                    }
                }
            ]
