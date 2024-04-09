@@ -34,7 +34,7 @@
 $pathLokasi = $_SERVER['REQUEST_URI'];
 $pathLokasi = preg_replace('/[^a-zA-Z_-]/s','',$pathLokasi);
 
-if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site' || $pathLokasi === 'master-lokasi' || $pathLokasi === 'daftar-outlet' || $pathLokasi === 'all-city' || $pathLokasi === 'all-area' || $pathLokasi === 'all-site' || $pathLokasi === 'all-outlet' || $pathLokasi === 'add-outlet' || $pathLokasi === 'edit-outlet' || $pathLokasi === 'confirm-delete-outlet' || $pathLokasi === 'edit-city' || $pathLokasi === 'confirm-delete-city' || $pathLokasi === 'edit-area' || $pathLokasi === 'confirm-delete-area') {
+if ($pathLokasi === 'add-city' || $pathLokasi === 'add-area' || $pathLokasi === 'add-site' || $pathLokasi === 'master-lokasi' || $pathLokasi === 'daftar-outlet' || $pathLokasi === 'all-city' || $pathLokasi === 'all-area' || $pathLokasi === 'all-site' || $pathLokasi === 'all-outlet' || $pathLokasi === 'add-outlet' || $pathLokasi === 'edit-outlet' || $pathLokasi === 'confirm-delete-outlet' || $pathLokasi === 'edit-city' || $pathLokasi === 'confirm-delete-city' || $pathLokasi === 'edit-area' || $pathLokasi === 'confirm-delete-area' || $pathLokasi === 'confirm-delete-site' || $pathLokasi === 'edit-site') {
     $pathLokasi = 'active';
 }
 
