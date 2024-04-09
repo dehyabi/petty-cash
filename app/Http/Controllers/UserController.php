@@ -50,4 +50,69 @@ class UserController extends Controller
         ]);
     }
 
+
+    public function editUser($id) {
+
+        $group_users = GroupUser::all();
+        $outlets = Outlet::all();
+
+        $user = User::findOrfail($id);
+        return view('user.edit-user', compact('user', 'group_users', 'outlets'));
+    }
+
+
+    public function updateUser(Request $request, $id) {
+        $this->validate($request, [
+            'user' => 'required'
+        ]);
+
+        $user = User::findOrFail($id);       
+
+        $user->update([
+            'nama' => $request->user,
+            'outlet' => $request->outlet,
+            'group_user' => $request->group_user
+        ]);
+
+        if ($user) {
+            return redirect()
+                ->route('all.user')
+                ->with([
+                    'success' => 'Data berhasil diupdate'
+                ]);
+        } else {
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with([
+                'error' => 'Terjadi kesalahan'
+            ]);
+        }
+    }
+
+    public function confirmDeleteUser($id) {
+
+        $user = User::findOrfail($id);
+        return view('user.confirm-delete-user', compact('user'));
+    }
+
+    public function deleteUser($id) {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        if ($user) {
+            return redirect()
+                ->route('all.user')
+                ->with([
+                    'success' => 'Data berhasil dihapus'
+                ]);
+        } else {
+            return redirect()
+                ->route('all.user')
+                ->with([
+                    'error' => 'Terjadi kesalahan'
+                ]);
+        }
+    }
+
 }
