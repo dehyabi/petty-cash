@@ -11,7 +11,7 @@
 
 <div class="row my-3 text-center">
     <div class="col-md">
-        <a class="card-link" href="{{ route('menu.transaksi') }}">
+        <a class="card-link" href="{{ route('all.transaksi') }}">
         <div class="card-db card-middle card py-5 my-2">
             Transaksi
         </div>

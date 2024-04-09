@@ -14,7 +14,7 @@ use App\Http\Controllers\MenuLokasiController;
 use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\JenisPembelianController;
 use App\Http\Controllers\MenuLaporanController;
-use App\Http\Controllers\MenuTransaksiController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\MenuDashboardController;
 use App\Http\Controllers\MasterLokasiController;
 use App\Http\Controllers\MasterUserController;
@@ -40,7 +40,13 @@ Route::get('/', function () {
 Route::get('/menu-dashboard',[MenuDashboardController::class,'menuDashboard'])->name('menu.dashboard');
 
 // menu transaksi
-Route::get('/menu-transaksi',[MenuTransaksiController::class,'menuTransaksi'])->name('menu.transaksi');
+Route::get('/add-transaksi',[TransaksiController::class,'addTransaksi'])->name('add.transaksi');
+Route::post('/store-transaksi',[TransaksiController::class,'storeTransaksi'])->name('store.transaksi');
+Route::get('/all-transaksi',[TransaksiController::class,'allTransaksi'])->name('all.transaksi');
+Route::get('/edit-transaksi/{id}',[TransaksiController::class,'editTransaksi'])->name('edit.transaksi');
+Route::put('/update-transaksi/{id}',[TransaksiController::class,'updateTransaksi'])->name('update.transaksi');
+Route::get('/confirm-delete-transaksi/{id}',[TransaksiController::class,'confirmDeleteTransaksi'])->name('confirm.delete.transaksi');
+Route::get('/delete-transaksi/{id}',[TransaksiController::class,'deleteTransaksi'])->name('delete.transaksi');
 
 // menu laporan
 Route::get('/menu-laporan',[MenuLaporanController::class,'menuLaporan'])->name('menu.laporan');

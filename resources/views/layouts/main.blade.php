@@ -58,6 +58,12 @@ if ($pathJenisPembelian === 'add-jenis-pembelian') {
     $pathJenisPembelian = 'active';
 }
 
+$pathTransaksi = $_SERVER['REQUEST_URI'];
+$pathTransaksi = ltrim($pathTransaksi, '/'); 
+if ($pathTransaksi === 'add-transaksi') {
+    $pathTransaksi = 'active';
+}
+
 @endphp
 
 <nav>
@@ -69,7 +75,7 @@ if ($pathJenisPembelian === 'add-jenis-pembelian') {
     >
     <i class="fasx fas fa-th-large"></i><span> Dashboard</span>
     </a>
-    <a href="{{ route('menu.transaksi') }}" class="list-group-item list-group-item-action py-3">
+    <a href="{{ route('all.transaksi') }}" class="list-group-item list-group-item-action py-3 {{ $pathTransaksi }}">
     <i class="fasx fas fa-shopping-cart"></i><span> Transaksi</span>
     </a>
     <a href="{{ route('menu.laporan') }}" class="list-group-item list-group-item-action py-3">

@@ -4,10 +4,10 @@
     <div class="card-header">
         <div class="row">
             <div class="col">
-                Laporan > Laporan Petty Cash
+                Transaksi > Transaksi Petty Cash
             </div>
             <div class="col text-right">
-                <a href="" ><button class="btn btn-info">Filter</button></a>
+                <a href="{{ route('add.transaksi') }}" ><button class="btn btn-info">Add</button></a>
             </div>
         </div>
     </div>
@@ -21,15 +21,44 @@
                     <tr>
                         <th>Tanggal</th>
                         <th>Outlet</th>
+                        <th>Jenis Pembelian</th>
                         <th>Akun</th>
                         <th>User</th>
-                        <th>Grouping Jenis Pembelian</th>
-                        <th>Penerimaan</th>
-                        <th>Pengeluaran</th>
+                        <th>Debit</th>
+                        <th>Kredit</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                @php
+                    $no=1;
+                @endphp
 
+                @foreach($allTransaksi as $transaksi)
+                
+                @php
+                $created_at = explode(' ',$transaksi->created_at);
+                $created_at = $created_at[0]; 
+
+                $originalDate = $created_at;
+                $newDate = date("d-m-Y", strtotime($originalDate));
+                @endphp
+
+                <tr>
+                    <td>{{ $newDate }}</td>
+                    <td>{{ $transaksi->outlet }}</td>
+                    <td>{{ $transaksi->jenis_pembelian }}</td>
+                    <td>{{ $transaksi->akun }}</td>
+                    <td>{{ $transaksi->nama }}</td>
+                    <td>{{ $transaksi->debit }}</td>
+                    <td>{{ $transaksi->kredit }}</td>
+                    <td>
+                        <a href="{{ route('edit.transaksi', $transaksi->id) }}" class="btn btn-sm btn-info">Edit</a>
+                        <a href="{{ route('confirm.delete.transaksi', $transaksi->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                
+                @endforeach
                     
                 </tbody>
             </table>
@@ -39,11 +68,10 @@
 @endsection
 @section('script')
 <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        
 <script>
    $('#dataTable').DataTable({
     columnDefs: [
-    {bSortable: false, targets: [4]} 
+    {bSortable: false, targets: [7]} 
   ],
                 dom: 'lBfrtip',
            buttons: [
@@ -53,7 +81,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
                    }
                },
                {
@@ -62,10 +90,10 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4 ]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7 ]
                    }
                }
            ]
            });
-       </script>
+</script>
 @endsection
