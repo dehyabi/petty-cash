@@ -16,7 +16,9 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>Tanggal</th>
+                        <th>No. Transaksi</th>
                         <th>Outlet</th>
                         <th>Akun</th>
                         <th>User</th>
@@ -26,6 +28,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                @php 
+                $no=1;
+                @endphp
 
                 @foreach($allTransaksi as $transaksi)
                 
@@ -38,7 +43,9 @@
                 @endphp
 
                 <tr>
+                    <td>{{ $no++ }}</td>
                     <td>{{ $newDate }}</td>
+                    <td>{{ $transaksi->no_transaksi }}</td>
                     <td>{{ $transaksi->outlet }}</td>
                     <td>{{ $transaksi->akun }}</td>
                     <td>{{ $transaksi->nama }}</td>
@@ -81,7 +88,7 @@
 <script>
    $('#dataTable').DataTable({
     columnDefs: [
-    {bSortable: false, targets: [4]} 
+    {bSortable: false, targets: [0]} 
   ],
                 dom: 'lBfrtip',
            buttons: [
@@ -91,7 +98,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4, 5, 6]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8]
                    }
                },
                {
@@ -100,7 +107,7 @@
                     modifier: {
                         page: 'current'
                     },
-                    columns: [ 0, 1, 2, 3, 4, 5, 6 ]
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8]
                    }
                }
            ]

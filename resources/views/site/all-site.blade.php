@@ -52,7 +52,7 @@
 <script>
    $('#dataTable').DataTable({
     columnDefs: [
-    {bSortable: false, targets: [1]} 
+    {bSortable: false, targets: [0]} 
   ],
                 dom: 'lBfrtip',
            buttons: [

@@ -49,5 +49,32 @@
 @endsection
 @section('script')
 <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        
+<script>
+   $('#dataTable').DataTable({
+    columnDefs: [
+    {bSortable: false, targets: [0]} 
+  ],
+                dom: 'lBfrtip',
+           buttons: [
+               {
+                   extend: 'excelHtml5',
+                   exportOptions: {
+                    modifier: {
+                        page: 'current'
+                    },
+                    columns: [ 0, 1]
+                   }
+               },
+               {
+                   extend: 'pdfHtml5',
+                   exportOptions: {
+                    modifier: {
+                        page: 'current'
+                    },
+                    columns: [ 0, 1]
+                   }
+               }
+           ]
+           });
+</script>       
 @endsection

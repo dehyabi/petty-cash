@@ -58,7 +58,7 @@ if ($pathJenisPembelian === 'add-jenis-pembelian') {
 
 $pathTransaksi = $_SERVER['REQUEST_URI'];
 $pathTransaksi = preg_replace('/[^a-zA-Z_-]/s','',$pathTransaksi);
-if ($pathTransaksi === 'add-transaksi') {
+if ($pathTransaksi === 'add-transaksi' || $pathTransaksi === 'edit-transaksi' || $pathTransaksi === 'confirm-delete-transaksi') {
     $pathTransaksi = 'active';
 }
 
