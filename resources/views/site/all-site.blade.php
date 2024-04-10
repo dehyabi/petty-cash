@@ -34,8 +34,8 @@
                     <td>{{ $no++ }}</td>
                     <td>{{ $site->site }}</td>
                     <td>
-                        <a href="{{ route('edit.site', $site->id) }}" class="btn btn-sm btn-info">Edit</a>
-                        <a href="{{ route('confirm.delete.site', $site->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('edit.site', $site->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
+                        <a href="{{ route('confirm.delete.site', $site->id) }}"><i class="fas fa-trash-alt" title="Delete"></i></a>
                     </td>
                 </tr>
                 

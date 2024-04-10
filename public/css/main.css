@@ -95,3 +95,15 @@ a.paginate_button:hover {
   cursor: pointer;
   color:  rgb(13, 164, 152) !important;
 }
+
+.fa-edit {
+  color: rgb(5, 176, 176);
+}
+
+.fa-trash-alt {
+  color: rgb(244, 60, 60);
+}
+
+.fa-edit:hover, .fa-trash-alt:hover {
+  opacity: 0.75;
+}

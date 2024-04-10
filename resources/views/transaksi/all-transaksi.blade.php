@@ -57,8 +57,8 @@
                     <td>{{ $transaksi->debit }}</td>
                     <td>{{ $transaksi->kredit }}</td>
                     <td>
-                        <a href="{{ route('edit.transaksi', $transaksi->id) }}" class="btn btn-sm btn-info">Edit</a>
-                        <a href="{{ route('confirm.delete.transaksi', $transaksi->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('edit.transaksi', $transaksi->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
+                        <a href="{{ route('confirm.delete.transaksi', $transaksi->id) }}"><i class="fas fa-trash-alt" title="Delete"></i></a>
                     </td>
                 </tr>
                 

@@ -34,8 +34,8 @@
                     <td>{{ $no++ }}</td>
                     <td>{{ $area->area }}</td>
                     <td>
-                        <a href="{{ route('edit.area', $area->id) }}" class="btn btn-sm btn-info">Edit</a>
-                        <a href="{{ route('confirm.delete.area', $area->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('edit.area', $area->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
+                        <a href="{{ route('confirm.delete.area', $area->id) }}"><i class="fas fa-trash-alt" title="Delete"></i></a>
                     </td>
                 </tr>
                 

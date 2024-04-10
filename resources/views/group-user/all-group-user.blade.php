@@ -34,8 +34,8 @@
                     <td>{{ $no++ }}</td>
                     <td>{{ $group_user->group_user }}</td>
                     <td>
-                        <a href="{{ route('edit.group.user', $group_user->id) }}" class="btn btn-sm btn-info">Edit</a>
-                        <a href="{{ route('confirm.delete.group.user', $group_user->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('edit.group.user', $group_user->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
+                        <a href="{{ route('confirm.delete.group.user', $group_user->id) }}"><i class="fas fa-trash-alt" title="Delete"></i></a>
                     </td>
                 </tr>
                 
